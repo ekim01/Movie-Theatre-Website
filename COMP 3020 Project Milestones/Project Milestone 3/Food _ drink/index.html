@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Movie Tickets</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        
+        <!-- jQuery Import -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <!-- Javascript file -->
+        <script type="text/javascript" src="code.js"></script>
+    </head>
+
+    <body>
+        
+        <!-- Top Navigation Bar -->
+        <div class="navbar">
+            <a ref="#home">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Showtimes
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                     <a href="#">Polo Park</a>
+                     <a href="#">St.Vital</a>
+                     <a href="#">McGillivray</a>
+                </div>
+            </div>
+            <a href="#home">Trailers</a>
+            <a href="#home">Food/Drink</a>
+            
+            <div style = "float: right;" class = "dropdown">
+                <button class = "login-signup" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign up</button>
+            </div>
+            
+            <div style = "float: right; border-right: 1px solid white;" class = "dropdown">
+                <button class = "login-signup">Log in</button>
+            </div>
+            
+        </div>
+        
+        
+        <!-- Sign up form -->
+        
+        <div id="id01" class="modal">
+          
+          <form class="modal-content animate">
+              
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+            
+            <p class = "formHeadings">Personal Information</p>
+              
+            <div class="container">
+              <label><b>First Name</b></label>
+              <input id = "firstName" type="text" placeholder="Enter First Name" name="first name" required>
+        
+              <label><b>Last Name</b></label>
+              <input type="text" placeholder="Enter Last Name" name="last name" required>
+        
+              <label><b>Email Address</b></label>
+              <input id = "emailAddress" type="text" placeholder="Enter Email Address" name="email-address" required>
+        
+              <div class="clearfix">
+                  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="button" onclick="showForm2()" class="signupbtn">Next
+                    <i class="fa fa-caret-right"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+        
+        <div id="id02" class="modal">
+          
+          <form class="modal-content animate">
+              
+            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+              
+            <p class = "formHeadings">Account Information</p>
+              
+            <div class="container">
+              <label><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="username" required>
+        
+              <label><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+        
+              <label><b>Confirm Password</b></label>
+              <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
+
+        
+              <div class="clearfix">
+                <button type="button" onclick="backToForm1()" class="backbtn">
+                    <i class="fa fa-caret-left"></i> Back
+                </button>
+                
+                <button type="button" onclick="showForm3()" class="signupbtn">Next
+                    <i class="fa fa-caret-right"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+        
+        <div id="id03" class="modal">
+          
+          <form class="modal-content animate">
+              
+            <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">×</span>
+              
+            <p class = "formHeadings">Credit Card Information</p>
+            <p style = "text-align: center; font-size: 14px; margin: 10px">*Storing credit card information on your account makes future purchases easier</p>
+              
+            <div class="container">
+              <label><b>First Name</b></label>
+              <input type="text" placeholder="Enter First Name" name="card first name" required>
+        
+              <label><b>Last Name</b></label>
+              <input type="text" placeholder="Enter Last Name" name="card last name" required>
+        
+              <label><b>Credit Card Number</b></label>
+              <input type="text" placeholder="Enter Credit Card Number" name="card number" required>
+              
+              <div style = "padding-bottom: 5px"><label><b>Expiration Date</b></label><br/></div>
+              
+              <select name='expireMM' id='expireMM'>
+                <option value=''>Month</option>
+                <option value='01'>January</option>
+                <option value='02'>February</option>
+                <option value='03'>March</option>
+                <option value='04'>April</option>
+                <option value='05'>May</option>
+                <option value='06'>June</option>
+                <option value='07'>July</option>
+                <option value='08'>August</option>
+                <option value='09'>September</option>
+                <option value='10'>October</option>
+                <option value='11'>November</option>
+                <option value='12'>December</option>
+            </select>
+            
+            <select name='expireYY' id='expireYY'>
+                <option value=''>Year</option>
+                <option value='10'>2017</option>
+                <option value='11'>2018</option>
+                <option value='12'>2019</option>
+                <option value='10'>2020</option>
+                <option value='11'>2021</option>
+                <option value='12'>2022</option>
+            </select>
+            
+            <br>
+            <div style = "padding-top: 10px; padding-bottom: 5px"><label><b>CVV/Security Code</b></label></div>
+            <input type="number" placeholder="Enter CVV" name="cvv" max="999" required>
+                    
+              <div class="clearfix">
+                <button type="button" onclick="backToForm2()" class="backbtn">
+                    <i class="fa fa-caret-left"></i> Back
+                </button>
+                
+                <button type="button" onclick="showForm4()" class="signupbtn">Next
+                    <i class="fa fa-caret-right"></i>
+                </button>
+                
+                <button style = "float: right" type="button" onclick="showForm4()" class="backbtn">Skip</button>
+                
+              </div>
+            </div>
+          </form>
+        </div>
+        
+        
+        <div id="id04" class="modal">
+          
+          <form class="modal-content animate">
+              
+            <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">×</span>
+              
+            <p class = "formHeadings">Connect Points Card</p>
+            <p style = "text-align: center; font-size: 14px; margin: 10px">*Storing points card information on your account can give you access to free products</p>
+              
+            <div class="container">
+              <label><b>First Name</b></label>
+              <input type="text" placeholder="Enter First Name" name="points card first name" required>
+        
+              <label><b>Last Name</b></label>
+              <input type="text" placeholder="Enter Last Name" name="points card last name" required>
+        
+              <label><b>Points Card Number</b></label>
+              <input type="text" placeholder="Enter Points Card Number" name="points card number" required>
+        
+              <div class="clearfix">
+                <button type="button" onclick="backToForm3()" class="backbtn">
+                <i class="fa fa-caret-left"></i> Back
+                </button>
+                
+                <button type="button" onclick="showVerificationEmail()" class="signupbtn">Finish</button>
+                <button style = "float: right" type="button" onclick="showVerificationEmail()" class="backbtn">Skip</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+        
+        <div id="id05" class="modal">
+          
+          <form class="modal-content animate">
+              
+            <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">×</span>
+              
+            <p id = "thankYouName" class = "formHeadings">Thank you!</p>
+            <p style = "text-align: center; font-size: 14px; margin: 10px">You have successfully created an account! A email verification will be sent to:</p>
+            <p id = "thankYouEmail" style = "text-align: center; font-size: 14px; margin: 10px; font-weight: bold"></p>
+              
+            <div class="container">
+        
+              <div class="clearfix">
+                <button id = "complete" type="button" onclick="document.getElementById('id05').style.display='none'" class="signupbtn">Complete</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- Food/Drink Page -->
+        
+        <div class>
+             <table>
+                <!-- First combo -->
+                <tr>
+                    <th rowspan="2"><div class= "combo-couples"> </div></th>
+                    <td><div class="combo-couples-Text"> Couples Combo </div></td>
+                    <td colspan="3"><div class="foodprice"> $25</div></td>
+                    <td><div class="combo-couples-Text"> Total price </div></td>
+                </tr>
+                <tr>
+                    <td><b>Includes:</b><br>
+                    1 X Large Popcorn<br>
+                    2 X Large Drink<br></td>
+                    <td><button class="buttonFood" id="couplesMinus" onclick="removeQTY('couplesMinus')">-</button></td>
+                    <td class="Amount"><p id="couplesQTYAmount">0</p></td>
+                    <td><button class="buttonFood" id="couplesPlus" onclick="addQTY('couplesPlus')">+</button></td>
+                    <td class="Amount"><p id="couplesPriceAmount">0</p></td>
+                </tr>
+                    
+                
+                <!-- second combo -->
+                <tr>
+                    <th rowspan="2"><div class= "combo-family"> </div></th>
+                    <td><div class="combo-family-Text"> Family Combo </div></td>
+                    <td colspan="3"><div class="foodprice"> $30</div></td>
+                    <td><div class="combo-family-Text"> Total price </div></td>
+                </tr>
+                <tr>
+                    <td><b>Includes:</b><br>
+                        2 X Large Popcorn<br>
+                        4 X Large Drink<br></td>
+                    <td><button class="buttonFood" id="familyMinus" onclick="removeQTY('familyMinus')">-</button></td>
+                    <td class="Amount"><p id="familyQTYAmount">0</p></td>
+                    <td><button class="buttonFood" id="familyPlus" onclick="addQTY('familyPlus')">+</button></td>
+                    <td class="Amount"><p id="familyPriceAmount">0</p></td>
+                </tr>
+                <tr>
+                    <td><button class="skip">Skip</button></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="3"><button class="next">Next</button></td>
+                </tr>
+            </table>
+            
+            <button class="signupbtn">Next
+                    <i class="fa fa-caret-right"></i>
+            </button>
+                
+        </div>
+
+        
+    </body>
+
+</html>

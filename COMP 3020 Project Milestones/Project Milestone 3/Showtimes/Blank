@@ -1,0 +1,26 @@
+{
+  "htmlFiles": [
+    {
+      "fileId": "1Kgvf1SZY8tGnJV7p3SOoIo0xAv9tvVhF",
+      "contentType": "text/html",
+      "name": "index.html",
+      "path": "1_AwM30j_STNjG3u00LfDSMxCZX-vVsgY/"
+    }
+  ],
+  "cssFiles": [
+    {
+      "fileId": "1MTlnf0NyJcIZ1NRv9Y9lf4KSFZPQgClc",
+      "contentType": "text/css",
+      "name": "style.css",
+      "path": "1_AwM30j_STNjG3u00LfDSMxCZX-vVsgY/"
+    }
+  ],
+  "javascriptFiles": [
+    {
+      "fileId": "1JtJaZ_zET3L-Lg_URb2W9GH8ZIKhLaZp",
+      "contentType": "text/javascript",
+      "name": "code.js",
+      "path": "1_AwM30j_STNjG3u00LfDSMxCZX-vVsgY/"
+    }
+  ]
+}
